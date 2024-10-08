@@ -1,0 +1,22 @@
+spring:
+  application:
+   name: Phoenix
+
+  #  sql:
+  #    init:
+  #      mode: always
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3310/phoenixdb
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate.format_sql: true
+    show-sql: true
+    open-in-view: false
+#    defer-datasource-initialization: true
