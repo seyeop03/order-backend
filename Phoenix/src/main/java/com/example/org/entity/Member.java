@@ -38,7 +38,4 @@ public class Member {
 
     @Enumerated(EnumType.STRING)
     private Provider provider;
-
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
 }

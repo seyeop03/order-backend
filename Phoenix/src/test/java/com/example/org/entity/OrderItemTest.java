@@ -73,6 +73,7 @@ class OrderItemTest {
         List<OrderItem> orderItems = new ArrayList<>();
         for (Item item : items) {
             OrderItem orderItem = new OrderItem();
+            orderItem.setOrder(order);
             orderItem.setItem(item);
             orderItem.setPrice(item.getPrice());
             orderItem.setCreatedAt(LocalDateTime.now());
@@ -100,5 +101,4 @@ class OrderItemTest {
         assertThat(items.get(0).getOrderItems().get(0).getId()).isEqualTo(orderItems.get(0).getId());
         assertThat(items.get(1).getOrderItems().get(1).getId()).isEqualTo(orderItems.get(1).getId());
     }
-
 }
