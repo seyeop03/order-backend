@@ -1,4 +1,4 @@
 package com.example.org.entity;
 public enum DeliveryStatus {
-    READY, SHIPPED, COMPLETED
+    READY, SHIPPED, COMPLETED, CANCELLED
 }
