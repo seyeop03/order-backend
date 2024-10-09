@@ -35,6 +35,7 @@ public class DeliveryServiceImpl implements DeliveryService {
         }
 
         delivery.setStatus(DeliveryStatus.CANCELLED);
+        delivery.setIsDeleted(true);
         deliveryRepository.save(delivery);
         log.info("주문번호 : {}, 배송취소 완료", orderId);
     }

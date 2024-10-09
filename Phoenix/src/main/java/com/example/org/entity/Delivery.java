@@ -23,6 +23,6 @@ public class Delivery {
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;
 
-    @ColumnDefault("0")
+    @Column(columnDefinition = "boolean default false")
     private Boolean isDeleted;
 }

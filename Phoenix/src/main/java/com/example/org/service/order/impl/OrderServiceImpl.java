@@ -8,11 +8,13 @@ import com.example.org.exception.OrderDomainException;
 import com.example.org.repository.OrderRepository;
 import com.example.org.service.order.OrderService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
 
@@ -24,6 +26,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     public void cancelOrder(Long orderId) {
+        log.info("cancelOrder started");
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new OrderDomainException("해당 주문번호 : " + orderId + "가 존재하지 않습니다."));
 
